@@ -32,8 +32,8 @@ function catalogoCompleto(completo){
 
 
 function buscarPorTitulo(){
-    let buscarTitulo = prompt("Indique el titulo que busca")
-    let comicEncontrado = comics.find((comic)=> comic.toLowerCase() == buscarTitulo.toLowerCase() )
+    const buscarTitulo = prompt("Indique el titulo que busca")
+    const comicEncontrado = comics.find((comic)=> comic.titulo.toLowerCase() == buscarTitulo.toLowerCase() )
     if(comicEncontrado == undefined){
         alert ("Su comic no fue encontrado")
      } else{
