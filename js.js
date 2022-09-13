@@ -1,5 +1,5 @@
 class comic {
-    propiedades (id,titulo,valor, personaje){
+    constructor (id,titulo,valor, personaje){
         this.id=id,
         this.titulo=titulo,
         this.valor = valor
@@ -7,7 +7,7 @@ class comic {
     }
     mostrarDatos(){
         console.log(`El numero del comic es ${this.id} , el titulo del es ${this.titulo} , el valor es ${this.valor} y el personaje que lo protagoniza es ${this.personaje}`)
-    }
+    };
 }
 
 const comic1 = new comic(1 , "La era de Apocalipsis" , 1500, "x-men")
@@ -32,8 +32,8 @@ function catalogoCompleto(completo){
 
 
 function buscarPorTitulo(){
-    const buscarTitulo = prompt("Indique el titulo que busca")
-    const comicEncontrado = comics.find((comic)=> comic.toLowerCase() == buscarTitulo.toLowerCase() )
+    let buscarTitulo = prompt("Indique el titulo que busca")
+    let comicEncontrado = comics.find((comic)=> comic.toLowerCase() == buscarTitulo.toLowerCase() )
     if(comicEncontrado == undefined){
         alert ("Su comic no fue encontrado")
      } else{
@@ -92,7 +92,7 @@ function opciones (opcionSeleccionada){
         buscarPorPersonaje(comics)
         break
         default: 
-        alert(`Ingreso uan opcion que no es correcta` )
+        alert(`Ingreso una opcion que no es correcta` )
     }
 }
 
