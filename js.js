@@ -1,27 +1,42 @@
 class comic {
-    constructor (id,titulo,valor, personaje){
+    constructor (id,titulo,valor, personaje, imagen){
         this.id=id,
         this.titulo=titulo,
-        this.valor = valor
-        this.personaje= personaje
+        this.valor = valor,
+        this.personaje= personaje,
+        this.imagen= imagen
     }
     mostrarDatos(){
         console.log(`El numero del comic es ${this.id} , el titulo del es ${this.titulo} , el valor es ${this.valor} y el personaje que lo protagoniza es ${this.personaje}`)
     };
 }
 
-const comic1 = new comic(1 , "La era de Apocalipsis" , 1500, "x-men")
-const comic2 = new comic(2, "The dark Knight" , 2000 , "Batman")
-const comic3 = new comic(3, "Spiderverse" , 2500 , "Spiderman")
-const comic4 = new comic(4, "El hijo rojo" ,3000 , "Superman")
-const comic5 = new comic (5, "Watchmen" , 3500 , "Watchmen")
-const comic6 = new comic(6,"La secta " ,4000 , "Batman")
-const comic7 =new comic (7, "Las 4 estaciones" , 4500 , "Superman")
-const comic8 = new comic(8 , "M of house" , 5000 , "x-men")
-const comic9 =new comic (9, "el libro de ezequiel", 5500 , "Spiderman")
+const comic1 = new comic(1 , "La era de Apocalipsis" , 1500, "x-men" , "apoxmen01.jpg")
+const comic2 = new comic(2, "The dark Knight" , 2000 , "Batman", "the dark night.jpg")
+const comic3 = new comic(3, "Spiderverse" , 2500 , "Spiderman" , "spiderverce.jpg")
+const comic4 = new comic(4, "El hijo rojo" ,3000 , "Superman", "hijo rojo.jpg")
+const comic5 = new comic (5, "Watchmen" , 3500 , "Watchmen", "watchmen.jpg")
+const comic6 = new comic(6,"La secta " ,4000 , "Batman" , "la secta.jpg")
+const comic7 =new comic (7, "Las 4 estaciones" , 4500 , "Superman" , "las 4 estaciones.jpg")
+const comic8 = new comic(8 , "House of M" , 5000 , "x-men" , "House of M.jpg")
+const comic9 =new comic (9, "el libro de ezequiel", 5500 , "Spiderman", "el libro de ezequiel.jpg")
 const comics = []
 comics.push(comic1, comic2, comic3, comic4 , comic5, comic6, comic7 , comic8 , comic9)
+let contenedor = document.getElementById("contenedor")
+comics.forEach((comic)=>{
+    let muestraComic = document.createElement("div")
+    muestraComic.innerHTML =` <div id= "${comic.id}"class="card" style="width: 18rem;">
+    <img src="./img/${comic.imagen}" class="card-img-top" alt=" ">
+    <div class="card-body"
+      <h4 class="card-title">${comic.titulo}</h4>
+      <h5>${comic.personaje}
+      <p class="card-text">El valor del comic es de ${comic.valor}</p>
+      <a href="#" class="btn btn-primary">comprar</a>
+      </div>
+  </div>`
+    contenedor.append(muestraComic)
 
+})
 function catalogoCompleto(completo){
     alert ("En la consola puede ver el catalogo")
     console.log("Estos son los comics correspondientes:")

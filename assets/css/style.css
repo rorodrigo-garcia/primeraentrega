@@ -1,0 +1,24 @@
+.card {
+  margin: 3px;
+  background-color: rgba(255, 255, 255, 0.253);
+  border: red solid 2px;
+  display: flex;
+}
+.card img {
+  height: 250px;
+  width: 250px;
+}
+.card h4 {
+  color: black;
+}
+.card h5 {
+  color: black;
+}
+.card p {
+  color: black;
+}
+.card .btn {
+  color: blue;
+  border-radius: 3px;
+  border: blue solid 3px;
+}/*# sourceMappingURL=style.css.map */
