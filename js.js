@@ -26,7 +26,7 @@ let contenedor = document.getElementById("contenedor")
 comics.forEach((comic)=>{
     let muestraComic = document.createElement("div")
     muestraComic.innerHTML =` <div id= "${comic.id}"class="card" style="width: 18rem;">
-    <img src="./img/${comic.imagen}" class="card-img-top" alt=" ">
+    <img src="./img/${comic.imagen}" class="card-img-top" alt="${comic.titulo} de ${comic.personaje} ">
     <div class="card-body"
       <h4 class="card-title">${comic.titulo}</h4>
       <h5>${comic.personaje}
