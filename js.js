@@ -31,12 +31,21 @@ comics.forEach((comic)=>{
       <h4 class="card-title">${comic.titulo}</h4>
       <h5>${comic.personaje}
       <p class="card-text">El valor del comic es de ${comic.valor}</p>
-      <a href="#" class="btn btn-primary">comprar</a>
+      <a href="#" id="btnCompra" class="btn btn-primary">comprar</a>
       </div>
   </div>`
     contenedor.append(muestraComic)
 
 })
+// ponerle un ID a el boton de compra y despues configurarlo asi :
+let btnCompra = document.getElementsByClassName ("btn")
+for (let compras of btnCompra){
+    compras.addEventListener("click" , () =>{
+        alert(`Felicitaciones has comprado un comic `)
+    })
+}
+
+
 function catalogoCompleto(completo){
     alert ("En la consola puede ver el catalogo")
     console.log("Estos son los comics correspondientes:")
